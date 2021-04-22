@@ -28,6 +28,7 @@ import { LoggerInterceptor } from './shared/interceptors/logger.interceptor';
 import { NavComponent } from './shared/nav/nav.component';
 import { AgePipe } from './shared/pipes/age.pipe';
 import { AppStoreModule } from './store/app-store.module';
+import { UiModule } from '@unicorn-nx/ui';
 
 const httpInterceptorProviders = [
     { provide: HTTP_INTERCEPTORS, useClass: LoggerInterceptor, multi: true },
@@ -74,6 +75,7 @@ const httpInterceptorProviders = [
             },
         }),
         AppStoreModule,
+        UiModule,
     ],
     providers: [
         ...httpInterceptorProviders,
